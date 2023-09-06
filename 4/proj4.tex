@@ -1,0 +1,64 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage[left=2cm, text={17cm, 24cm},top=3cm]{geometry}
+\usepackage[unicode]{hyperref}
+\bibstyle{czechiso}
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \textsc{\Huge {Vysoké učení technické v~Brně} \\ [0.4em]}
+        \textsc{\huge {Fakulta informačních technologií}} \\
+        \vspace{\stretch{0.382}}
+        {\LARGE Typografie a~publikování\,--\,4.~projekt} \\
+        \Huge{Bibliografické citace}
+        \vspace{\stretch{0.618}}
+    \end{center}
+    \Large{\today \hfill Ivan Tsiareshkin} 
+\end{titlepage}
+
+\newpage
+
+\section{\LaTeX}
+    {\LaTeX} je komplexní sada značkovacích příkazů používaných s~výkonným sázecím programem {\TeX} pro přípravu široké škály dokumentů, od vědeckých článků až po složité knihy. {\LaTeX} jako {\TeX} je otevřený softwarový systém dostupný zdarma \cite{Guide2003}.
+
+    \noindent V~prostředí {\LaTeX}u přebírá {\LaTeX} roli návrháře knih a používá {\TeX} jako svůj sazeč. Ale {\LaTeX} je \uv{pouze} program, a proto potřebuje více vedení. Autor musí poskytnout další informace k~popisu logické struktury své práce. Tyto informace jsou zapsány do textu jako příkazy {\LaTeX}u \cite{Oetiker2018}. 
+
+    \noindent Základní myšlenkou nadstavby \LaTeX u je totiž zpřístupnění složitého jazyka pro sazbu uživatelům, kteří nemají vzdělání v~oblasti typografie \cite{Pysny2009}.
+
+\section{Práce s~{\LaTeX}em}
+    Práce se systémem spočívá v~opakované posloupnosti tří kroků \cite{Rybicka2003}:
+    \begin{enumerate}
+        \item pořízení nebo úprava zdrojového textu v~editoru
+        \item překlad zdrojového textu zvoleným překladačem do zvoleného výstupního formátu
+        \item prohlédnutí výsledku prohlížečem výstupního formátu
+    \end{enumerate}
+
+\section{Sazba matematických výrazů}
+    Základními matematickými prostředími jsou řádkové rovnice a samostatné rovnice. Od textu je odděluje symbol \$ v~případě řádkového prostředí, resp. \verb|\[ | a\verb| \]| v~případě samostatné rovnice. Alternativně se často používá k~oddělování matematických symbolů \verb|\(| \dots \verb|\)|, resp. \$\$ \dots \$\$ \cite{Kalvoda2015}.
+    
+    \noindent V~tomto prostředí lze velmi jednoduše sázet zlomky, matematické symboly, znaky, závorky atd. \cite{Olsak2014}. Existují dokonce i~nástroje, které z~ručně psaného textu dokáží vygenerovat zdrojový kód pro {\LaTeX} \cite{Oksuz2008}.
+
+    Příklad vysázené rovnice (lze nalézt v~\cite{CazarezCastro2012}):
+    $$\tau = u_{COA} = \frac{\int_{u}^{}\mu_{A}(u)udu}{\int_{u}^{}\mu_{A}(u)du}$$
+
+\section{Čeština v~{\LaTeX}u}
+    Pokud chcete sázet české dokumenty v~{\LaTeX}u nestačí použít počeštěný překladač, protože ten řeší pouze odsazování a lámání vět a odstavců. Běžně používané {\LaTeX}ové balíčky ovšem obsahují předdefinované názvy kapitol či sekcí, které jsou v~angličtině. Počeštění těchto věcí, stejně jako sázení kalendářních dat (pomocí \verb|\today| a dělení českých slov řeší balík \verb|czech|. Český {\LaTeX}ový dokument by tudíž měl začínat takto \cite{Martinek2008}: 
+    \\ \\ 
+    \noindent \verb|\documentclass[a4]{article}| \\
+    \verb|\usepackage{czech}| \\
+    \verb|\usepackage[latin2]{inputenc} % pro iso8859-2| \\
+    \verb|% \usepackage[utf8]{inputenc} % pro unicode UTF-8| \\
+    \verb|% \usepackage[cp1250]{inputenc} % pro win1250| \\
+    
+    \noindent Je-li psán text v~jiném jazyce a je třeba zapsat české znaky lze použít příkaz \verb|\’{a}| pro znak s~čárkou (á), \verb|\v{r}| pro znak s~háčkem (ř), \verb|\r{u}| pro znak s~kroužkem (ů). Pro velká písmena \verb|\’{A}|, \verb|\v{R}|, \verb|\r{U}| (Á, Ř, Ů). Takový to styl psaní je sice možný, ale prakticky téměř nerealizovatelný pro psaní českých dokumentů \cite{Bojko2011}.
+
+\newpage
+
+\bibliographystyle{czechiso}
+\renewcommand{\refname}{Literatura}
+\bibliography{proj4}
+
+\end{document}
